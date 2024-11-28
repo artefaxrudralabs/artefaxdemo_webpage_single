@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artefax Pitch Deck Sep 2024</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .infrastructure-card {
+            transition: all 0.3s ease;
+        }
+        .infrastructure-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <style>
+        /* General Reset and Body Styling */
+        body {
+            font-family: 'Lexend', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(to bottom, #ffe4ec, #fdfdfd); /* Soft pink gradient */
+        }
+
+        /* Header and Footer Styling */
+        header, footer {
+            background: #ffffff; /* Vibrant pink header and footer */
+            color: #fff;
+            padding: 20px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Container Styling */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Headings Styling */
+        h1, h2, h3 {
+            font-weight: 600;
+            margin-top: 20px;
+            color: #ff007f; /* Vibrant pink */
+            border-bottom: 2px solid #ffe4ec;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        /* Paragraph and Text Styling */
+        p {
+            margin: 10px 0;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        /* Link Styling */
+        a {
+            color: #ff007f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Card Component Styling */
+        .card {
+            background: #fff;
+            border: 2px solid #ffe4ec; /* Soft pink border */
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            color: #ff007f;
+            margin-bottom: 15px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1rem;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            text-align: left;
+            padding: 15px;
+            border: 1px solid #eee;
+        }
+
+        th {
+            background: #ffe4ec;
+            color: #333;
+            font-weight: 600;
+        }
+
+        td ul {
+            padding-left: 20px;
+        }
+
+        /* Rotated Text Styling */
+        .rotated-text {
+            transform: rotate(-90deg);
+            transform-origin: center;
+            writing-mode: vertical-rl;
+            text-align: center;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Buttons */
+        button {
+            background: #ff007f;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #e60072;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            table th, table td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-pink-300 to-pink-500 text-white py-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-extrabold">Artefax.ai</h1>
+            <p class="mt-2 text-lg font-light">Infrastructure for Print-On-Demand Commerce</p>
+        </div>
+    </header>
+    <img src="assets/header.webp" width="" height="100" alt="header" />
+
+    <!-- <main class="container"> -->
+        <main class="container mx-auto px-4 py-10">
+            
+
+        <section>
+            <!-- <h2 class="text-4xl font-bold text-center mb-8 text-gray-800">Infrastructure Overview</h2> -->
+            <!-- <h2>Infrastructure Overview</h2> -->
+            <h2 class="text-3xl font-semibold text-gray-800 text-center mb-6">Infrastructure Overview</h2>
+
+            <!-- Responsive Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+                
+                <!-- Applications Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Applications</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                        </svg>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-600 mb-2">Creation</h4>
+                            <ul class="text-sm text-gray-700">
+                                <li>Create™</li>
+                                <li>Facemash™</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-600 mb-2">Discovery</h4>
+                            <ul class="text-sm text-gray-700">
+                                <li><a href="https://www.artefax.ai" class="text-pink-600 hover:underline">www.artefax.ai</a></li>
+                            </ul>
+                        </div>
+                        <!-- <div>
+                            <h4 class="font-bold text-sm text-gray-600 mb-2">Print</h4>
+                            <p class="text-gray-400">No items</p>
+                        </div> -->
+                    </div>
+                </div>
+        
+                <!-- APIs Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">APIs</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="space-y-4">
+                        <!-- <div>
+                            <h4 class="font-bold text-sm text-gray-600 mb-2">Creation</h4>
+                            <p class="text-gray-400">No items</p>
+                        </div> -->
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-600 mb-2">Discovery</h4>
+                            <ul class="text-sm text-gray-700">
+                                <li>FaceTrax™</li>
+                                <li>Visualyse™</li>
+                                <li>VirtualMerchstore™</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-600 mb-2">Print</h4>
+                            <ul class="text-sm text-gray-700">
+                                <li>UniversalPrint™</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Plugins Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Plugins</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <div class="space-y-4">
+                        <!-- <div>
+                            <h4 class="font-bold text-sm text-gray-600 mb-2">Creation</h4>
+                            <p class="text-gray-400">No items</p>
+                        </div> -->
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-600 mb-2">Discovery</h4>
+                            <ul class="text-sm text-gray-700">
+                                <li>WowMerch™</li>
+                            </ul>
+                        </div>
+                        <!-- <div>
+                            <h4 class="font-bold text-sm text-gray-600 mb-2">Print</h4>
+                            <p class="text-gray-400">No items</p>
+                        </div> -->
+                    </div>
+                </div>
+        
+                <!-- IOT Hardware Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">IOT Hardware</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-600 mb-2">Creation</h4>
+                            <ul class="text-sm text-gray-700">
+                                <li>POD.AI™</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-600 mb-2">Discovery</h4>
+                            <ul class="text-sm text-gray-700">
+                                <li>POD.AI™</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-600 mb-2">Print</h4>
+                            <ul class="text-sm text-gray-700">
+                                <li>POD.AI™</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <!-- <h2>Customer Use Cases</h2> -->
+            <h2 class="text-3xl font-semibold text-gray-800 text-center mb-6">Customer Use Cases</h2>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Social Media Influencers</h3>
+                    <p>Use AI to monetize your content and build a brand featuring stunning designs.</p>
+                    <p><strong>Target Market:</strong> 65 million globally.</p>
+                </div>
+                <div class="card">
+                    <h3>Ecommerce Entrepreneurs</h3>
+                    <p>Scale your business with our AI-inspired art and POD solutions.</p>
+                </div>
+                <div class="card">
+                    <h3>Affiliate Marketers</h3>
+                    <p>Earn margins up to 50% and lifetime referral fees for repeat consumers.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <!-- <h2>Product Features</h2> -->
+            <h2 class="text-3xl font-semibold text-gray-800 text-center mb-6">Product Features</h2>
+
+        
+            <!-- General CSS -->
+            <style>
+                .product-section {
+                    margin-bottom: 40px;
+                }
+                .product-section h3 {
+                    color: #ff007f;
+                    margin-bottom: 10px;
+                }
+                .product-section p {
+                    margin-bottom: 15px;
+                    color: #555;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin: 20px 0;
+                    font-size: 1rem;
+                }
+                table th, table td {
+                    text-align: left;
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                }
+                table th {
+                    background-color: #ffbfd8;
+                    color: #333;
+                    font-weight: 600;
+                }
+                table tr:nth-child(even) {
+                    background-color: #f9f9f9;
+                }
+                table tr:hover {
+                    background-color: #ffe6ef;
+                }
+            </style>
+        
+            <!-- Create -->
+            <div class="product-section">
+                <h3>Create™</h3>
+                <p>Monetisation for Social Media Influencers.</p>
+                <table>
+                    <tr>
+                        <th>Customers</th>
+                        <td>Social Media influencers / Content Creators</td>
+                    </tr>
+                    <tr>
+                        <th>TAM</th>
+                        <td>65 million globally</td>
+                    </tr>
+                    <tr>
+                        <th>Pain Points</th>
+                        <td>
+                            <ul>
+                                <li>Average Designs</li>
+                                <li>High Consumer Costs</li>
+                                <li>Low Revenue Share</li>
+                                <li>No scale, tip-Jar effect</li>
+                                <li>Poor SEO ranking</li>
+                                <li>No indexation on internal indexes of ~ 700 marketplaces</li>
+                                <li>Thin URLs, low TAM</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposition</th>
+                        <td>Create your own Brand of Stunning AI-inspired art and make order-of-magnitude times more money than other time-based monetization solutions.</td>
+                    </tr>
+                </table>
+            </div>
+        
+            <!-- Facemash -->
+            <div class="product-section">
+                <h3>Facemash™</h3>
+                <p>Enable branded Facemash-based merch sales on your own website or app.</p>
+                <table>
+                    <tr>
+                        <th>Customers</th>
+                        <td>Businesses with traffic and web presence seeking monetization through personalized merch.</td>
+                    </tr>
+                    <tr>
+                        <th>TAM</th>
+                        <td>Large</td>
+                    </tr>
+                    <tr>
+                        <th>Pain Points</th>
+                        <td>
+                            <ul>
+                                <li>Large investments</li>
+                                <li>No plug-and-play solution</li>
+                                <li>No Global discoverability</li>
+                                <li>Poor margins</li>
+                                <li>Thin URLs, low TAM</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposition</th>
+                        <td>Use FaceTrax™ to create branded Facemash merch and earn ~50% per sale without worrying about manufacturing.</td>
+                    </tr>
+                </table>
+            </div>
+        
+            <!-- Visualyse -->
+            <div class="product-section">
+                <h3>Visualyse™</h3>
+                <p>Enable branded AI-inspired merch sales on your own website or app.</p>
+                <table>
+                    <tr>
+                        <th>Customers</th>
+                        <td>Businesses with traffic and web presence seeking monetization through AI-powered merch.</td>
+                    </tr>
+                    <tr>
+                        <th>TAM</th>
+                        <td>Large</td>
+                    </tr>
+                    <tr>
+                        <th>Pain Points</th>
+                        <td>
+                            <ul>
+                                <li>Large investments</li>
+                                <li>No plug-and-play solution</li>
+                                <li>No Global discoverability</li>
+                                <li>Poor margins</li>
+                                <li>Thin URLs, low TAM</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposition</th>
+                        <td>Market branded AI-inspired merch with a WebSocket API for seamless integration.</td>
+                    </tr>
+                </table>
+            </div>
+        
+            <!-- VirtualMerchstore -->
+            <div class="product-section">
+                <h3>VirtualMerchstore™</h3>
+                <p>Monetize connected displays at retail or high-traffic locations via super-affiliate marketing.</p>
+                <table>
+                    <tr>
+                        <th>Customers</th>
+                        <td>Owners of Wi-Fi-enabled connected devices at retail locations globally.</td>
+                    </tr>
+                    <tr>
+                        <th>TAM</th>
+                        <td>Large</td>
+                    </tr>
+                    <tr>
+                        <th>Pain Points</th>
+                        <td>Low monetization via advertising.</td>
+                    </tr>
+                    <tr>
+                        <th>Proposition</th>
+                        <td>Increase monetization with a high-revenue share on AI merch without additional investment.</td>
+                    </tr>
+                </table>
+            </div>
+        
+            <!-- UniversalPrint -->
+            <div class="product-section">
+                <h3>UniversalPrint™</h3>
+                <p>Drag-and-drop creation of optimized print files for each substrate without manual intervention.</p>
+                <table>
+                    <tr>
+                        <th>Customers</th>
+                        <td>Printer owners</td>
+                    </tr>
+                    <tr>
+                        <th>TAM</th>
+                        <td>Large</td>
+                    </tr>
+                    <tr>
+                        <th>Pain Points</th>
+                        <td>
+                            <ul>
+                                <li>Huge time and energy spent on designing print files</li>
+                                <li>High machine downtime due to operator involvement</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Proposition</th>
+                        <td>Drag-and-drop interface to create optimized print files designed for each substrate.</td>
+                    </tr>
+                </table>
+            </div>
+        
+            <!-- POD.AI -->
+            <div class="product-section">
+                <h3>POD.AI™</h3>
+                <p>AI-powered print-on-demand vending machines.</p>
+                <table>
+                    <tr>
+                        <th>Customers</th>
+                        <td>Businesses interested in automatic or assisted vending machines.</td>
+                    </tr>
+                    <tr>
+                        <th>TAM</th>
+                        <td>Large</td>
+                    </tr>
+                    <tr>
+                        <th>Proposition</th>
+                        <td>Build a POD franchise with great margins and viral merch! Available in fully automated or human-assisted variants.</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+      
+   <!-- Contact Form -->
+   <section>
+    <h2 class="text-3xl font-semibold text-gray-800 text-center mb-6">Contact Form</h2>
+    <p class="text-center text-gray-600 mb-8">
+        We will review your application and get back to you soon. Thank you for your interest in Artefax.ai!
+    </p>
+    <form action="/submit-form" method="post" class="max-w-lg mx-auto bg-white p-6 rounded-xl shadow-md">
+        <div class="mb-4">
+            <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required class="w-full p-3 border border-gray-300 rounded-lg">
+        </div>
+        <div class="mb-4">
+            <label for="printing-experience" class="block text-sm font-semibold text-gray-700 mb-2">Printing Experience:</label>
+            <textarea id="printing-experience" name="printing-experience" placeholder="Describe your printing experience" rows="3" class="w-full p-3 border border-gray-300 rounded-lg"></textarea>
+        </div>
+        <div class="mb-4">
+            <label for="business-experience" class="block text-sm font-semibold text-gray-700 mb-2">Business Experience:</label>
+            <textarea id="business-experience" name="business-experience" placeholder="Describe your business experience" rows="3" class="w-full p-3 border border-gray-300 rounded-lg"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-pink-500 text-white py-3 rounded-lg hover:bg-pink-600 transition duration-300">
+            Submit Application
+        </button>
+    </form>
+</section>
+    </main>
+
+    <footer class="bg-gray-100 py-6 text-center">
+        <p class="text-sm text-gray-500">&copy; 2024 Artefax.ai. All rights reserved.</p>
+    </footer>
+</body>
+</html>
